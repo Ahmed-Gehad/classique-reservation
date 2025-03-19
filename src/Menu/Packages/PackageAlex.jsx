@@ -7,26 +7,30 @@ const menuItems = [
     { 
         title: "BUFFET L’OR", 
         content: "Price: 795 EGP For Person", 
-        link: "/packages/lor"
+        link: "/packages/lor",
+        image: "/images/buffet-lor.jpg"
     },
     { 
         title: "BUFFET PLATINE", 
         content: "Price: 895 EGP For Person", 
-        link: "/packages/platine"
+        link: "/packages/platine",
+        image: "/images/buffet-platine.jpg"
     },
     { 
         title: "BUFFET LE DIAMANT", 
         content: "Price: 995 EGP For Person", 
-        link: "/packages/le-diamant"
+        link: "/packages/le-diamant",
+        image: "/images/buffet-diamant.jpg"
     },
     { 
         title: "LIVE STATIONS x BUFFET", 
         content: "Price: 1,195 EGP For Person", 
-        link: "/packages/live-stations"
+        link: "/packages/live-stations",
+        image: "/images/live-stations.jpg"
     },
 ];
 
-function PackageCard({ title, content, link }) {
+function PackageCard({ title, content, link, image }) {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
@@ -38,17 +42,16 @@ function PackageCard({ title, content, link }) {
             style={{ transformStyle: "preserve-3d" }}
             onClick={() => setIsOpen(!isOpen)}
         >
-            
             {/* الغلاف الأمامي */}
-            <div className="absolute inset-0 flex items-end justify-center rounded-md">
-                <img src={logo} alt="Book Cover" className="w-full h-full object-cover rounded-md" />
+            <div className="absolute inset-0 flex items-end justify-center rounded-md pointer-events-none">
+                <img src={logo} alt={title} className="w-full h-full object-cover rounded-md" />
                 <span className="absolute text-white font-bold text-lg bg-black/50 px-2 py-2 mb-6 rounded-md">
                     {title}
                 </span>
             </div>
 
             {/* الصفحة الداخلية */}
-            <div className="absolute inset-0 bg-white text-black flex flex-col items-center justify-center p-3 rounded-md"
+            <div className="absolute inset-0 bg-white text-black flex flex-col items-center justify-center p-3 rounded-md pointer-events-none"
                 style={{ transform: "rotateY(180deg)", backfaceVisibility: "hidden" }}>
                 <h2 className="text-lg font-bold mb-2">{title}</h2>
                 <p className="text-sm">{content}</p>
@@ -67,13 +70,14 @@ export default function MenuPage() {
         <div className="p-6">
             <h1 className="text-5xl text-center text-green-900 pb-10 font-bold">ALEXANDRIA</h1>
             {/* عرض القوائم */}
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 justify-center">
                 {menuItems.map((item, index) => (
                     <PackageCard 
                         key={index} 
                         title={item.title} 
                         content={item.content} 
                         link={item.link}
+                        image={item.image}
                     />
                 ))}
             </div>
