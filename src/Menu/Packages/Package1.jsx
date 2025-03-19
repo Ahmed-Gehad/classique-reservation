@@ -216,15 +216,19 @@ export default function MenuPage() {
                     ) // إزالة العناصر الفعلية من BEVERAGES و The Manouche
                 }}
             >
-                <button
-                    className={`px-6 py-3 rounded-md flex items-center gap-2 ${selectedItems.length > 0 || (selectedCategory === "BEVERAGES" && selectedSubCategory) || (selectedCategory === "The Manouche")
-                            ? "bg-green-900 text-white"
-                            : "bg-gray-400 cursor-not-allowed opacity-50"
-                        }`}
-                    disabled={selectedItems.length === 0 && !(selectedCategory === "BEVERAGES" && selectedSubCategory) && selectedCategory !== "The Manouche"}
-                >
-                    🛒 الانتقال إلى الدفع
-                </button>
+                <div className="flex justify-center mt-6">
+    <button
+        className={`px-6 py-3 rounded-md flex items-center gap-2 
+            ${selectedItems.length > 0 || (selectedCategory === "BEVERAGES" && selectedSubCategory) || (selectedCategory === "The Manouche")
+                ? "bg-green-900 text-white"
+                : "bg-gray-400 cursor-not-allowed opacity-50"
+        }`}
+        disabled={selectedItems.length === 0 && !(selectedCategory === "BEVERAGES" && selectedSubCategory) && selectedCategory !== "The Manouche"}
+    >
+        INVOICE
+    </button>
+</div>
+
             </Link>
             {/* نافذة تكبير الصورة */}
             {fullScreenImage && (

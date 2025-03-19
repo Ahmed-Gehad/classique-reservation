@@ -38,7 +38,7 @@ export default function Checkout() {
 
             {/* ✅ عرض بيانات العميل */}
             <div className="bg-gray-100 p-4 rounded-md mb-6 shadow-md text-lg">
-                <h2 className="text-xl font-bold mb-3">👤 معلومات العميل:</h2>
+                <h2 className="text-xl font-bold mb-3">👤 Coustumer Informations :</h2>
                 <p><strong>📌 Client Name:</strong> {bookingData.clientName || "غير محدد"}</p>
                 <p><strong>📞 Contact No.:</strong> {bookingData.contactNo || "غير محدد"}</p>
                 <p><strong>🎉 Event:</strong> {bookingData.event || "غير محدد"}</p>
