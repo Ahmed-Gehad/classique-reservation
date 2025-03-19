@@ -67,16 +67,18 @@ export default function MenuPage() {
         <div className="p-6">
             <h1 className="text-5xl text-center text-green-900 pb-10 font-bold">CAIRO</h1>
             {/* عرض القوائم */}
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                {menuItems.map((item, index) => (
-                    <PackageCard 
-                        key={index} 
-                        title={item.title} 
-                        content={item.content} 
-                        link={item.link}
-                    />
-                ))}
-            </div>
+            <div className="flex justify-center">
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        {menuItems.map((item, index) => (
+            <PackageCard 
+                key={index} 
+                title={item.title} 
+                content={item.content} 
+                link={item.link}
+            />
+        ))}
+    </div>
+</div>
         </div>
     );
 }
