@@ -65,7 +65,7 @@ function PackageCard({ title, content, link }) {
 export default function MenuPage() {
     return (
         <div className="p-6">
-            <h1 className="text-5xl text-center text-green-900 pb-10 font-bold">ALEXANDRIA</h1>
+            <h1 className="text-4xl text-center text-green-900 pb-10 font-bold">ALEXANDRIA</h1>
             {/* عرض القوائم */}
             <div className="flex justify-center">
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
