@@ -6,45 +6,45 @@ import logo from "../assets/logo.webp"
 
 // ✅ بيانات القوائم
 const menuItems = [
-    { 
-        title: "Main Menu", 
-        content: "Start from 10PAX to 50PAX", 
-        image: "/Main Menu.jpg", 
-        city: ["Cairo", "Alexandria"], 
-        linkCairo: "/cairo/main-menu", 
-        linkAlexandria: "/alexandria/main-menu" 
+    {
+        title: "Main Menu",
+        content: "Start from 10PAX to 50PAX",
+        image: "/Main Menu.jpg",
+        city: ["Cairo", "Alexandria"],
+        linkCairo: "/cairo/main-menu",
+        linkAlexandria: "/alexandria/main-menu"
     },
-    { 
-        title: "Set Menu", 
-        content: "Lets Choose from our 3 Packages", 
-        image: "/Set Menu.jpg", 
-        city: ["Cairo", "Alexandria"], 
-        linkCairo: "/cairo/set-menu", 
-        linkAlexandria: "/alexandria/set-menu" 
+    {
+        title: "Set Menu",
+        content: "Lets Choose from our 3 Packages",
+        image: "/Set Menu.jpg",
+        city: ["Cairo", "Alexandria"],
+        linkCairo: "/cairo/set-menu",
+        linkAlexandria: "/alexandria/set-menu"
     },
-    { 
-        title: "Finger Food", 
-        content: "Savor our finest dinner dishes!", 
-        image: "/Finger Food.jpg", 
-        city: ["Cairo", "Alexandria"], 
-        linkCairo: "/cairo/finger-food", 
-        linkAlexandria: "/alexandria/finger-food" 
+    {
+        title: "Finger Food",
+        content: "Savor our finest dinner dishes!",
+        image: "/Finger Food.jpg",
+        city: ["Cairo", "Alexandria"],
+        linkCairo: "/cairo/finger-food",
+        linkAlexandria: "/alexandria/finger-food"
     },
-    { 
-        title: "Packages", 
-        content: "Lets Choose from our 4 Packages", 
-        image: "/Packages.jpg", 
-        city: ["Cairo", "Alexandria"], 
-        linkCairo: "/cairo/packages", 
-        linkAlexandria: "/alexandria/packages" 
+    {
+        title: "Packages",
+        content: "Lets Choose from our 4 Packages",
+        image: "/Packages.jpg",
+        city: ["Cairo", "Alexandria"],
+        linkCairo: "/cairo/packages",
+        linkAlexandria: "/alexandria/packages"
     },
-    { 
-        title: "Live Stations", 
-        content: "Experience live cooking!", 
-        image: "/Live Stations.jpg", 
-        city: ["Cairo", "Alexandria"], 
-        linkCairo: "/cairo/live-stations", 
-        linkAlexandria: "/alexandria/live-stations" 
+    {
+        title: "Live Stations",
+        content: "Experience live cooking!",
+        image: "/Live Stations.jpg",
+        city: ["Cairo", "Alexandria"],
+        linkCairo: "/cairo/live-stations",
+        linkAlexandria: "/alexandria/live-stations"
     }
 ];
 
@@ -111,23 +111,26 @@ export default function MenuList() {
             </div>
 
             {/* عرض القوائم بناءً على الفلتر */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 justify-items-center">
                 {filteredMenu.length > 0 ? (
                     filteredMenu.map((item, index) => (
-                        <MenuCard 
-                            key={index} 
-                            title={item.title} 
-                            content={item.content} 
+                        <MenuCard
+                            key={index}
+                            title={item.title}
+                            content={item.content}
                             image={item.image} // ✅ استخدام الصورة الصحيحة
-                            linkCairo={item.linkCairo} 
-                            linkAlexandria={item.linkAlexandria} 
-                            selectedCity={selectedCity} 
+                            linkCairo={item.linkCairo}
+                            linkAlexandria={item.linkAlexandria}
+                            selectedCity={selectedCity}
                         />
                     ))
                 ) : (
-                    <p className="text-center col-span-3 text-gray-500">⚠️ لا توجد قوائم متاحة لهذه المدينة.</p>
+                    <p className="text-center col-span-3 text-gray-500">
+                        ⚠️ لا توجد قوائم متاحة لهذه المدينة.
+                    </p>
                 )}
             </div>
+
         </div>
     );
 }
