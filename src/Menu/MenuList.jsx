@@ -100,13 +100,13 @@ export default function MenuList() {
                     className={`px-4 py-2 rounded ${selectedCity === "Alexandria" ? "bg-green-800 text-white" : "bg-gray-300"}`}
                     onClick={() => setSelectedCity("Alexandria")}
                 >
-                    الإسكندرية
+                    ALEXANDRIA
                 </button>
                 <button
                     className={`px-4 py-2 rounded ${selectedCity === "Cairo" ? "bg-green-800 text-white" : "bg-gray-300"}`}
                     onClick={() => setSelectedCity("Cairo")}
                 >
-                    القاهرة
+                    CAIRO
                 </button>
             </div>
 
